@@ -37,7 +37,7 @@ Fixed::Fixed( const int raw ) {
 
 Fixed::Fixed( const float raw ) {
     std::cout << "Float constructor called" << std::endl;
-    this->fp = raw * (1 << this->fracbit);
+    this->fp = roundf(raw * (1 << this->fracbit));
 }
 
 float Fixed::toFloat( void ) const {
